@@ -2,6 +2,8 @@ FROM jupyter/scipy-notebook
 
 USER root
 
+RUN pip install jupyter_contrib_nbextensions
+
 ENV SHELL=/bin/bash \
     NB_USER=edu \
     NB_UID=1001 \
@@ -29,6 +31,9 @@ RUN fix-permissions *
 
 RUN fix-permissions /etc/jupyter/
 
+USER $NB_USER
+RUN jupyter contrib nbextension install --user
+RUN jupyter nbextension enable codefolding/main
+RUN jupyter nbextension enable collapsible_headings/main
 RUN find .
 
-USER $NB_USER
