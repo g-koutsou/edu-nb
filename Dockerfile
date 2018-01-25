@@ -35,5 +35,7 @@ USER $NB_USER
 RUN jupyter contrib nbextension install --user
 RUN jupyter nbextension enable codefolding/main
 RUN jupyter nbextension enable collapsible_headings/main
+RUN jupyter nbextension enable latex_envs/latex_envs
+RUN jupyter nbextension enable freeze/main
+COPY ./notebook.json /home/edu/.jupyter/nbconfig/.
 RUN find .
-

@@ -1,0 +1,11 @@
+{
+  "init_delay": "2",
+  "load_extensions": {
+    "nbextensions_configurator/config_menu/main": true,
+    "contrib_nbextensions_help_item/main": true,
+    "codefolding/main": true,
+    "collapsible_headings/main": true,
+    "latex_envs/latex_envs": true,
+    "freeze/main": true
+  }
+}
